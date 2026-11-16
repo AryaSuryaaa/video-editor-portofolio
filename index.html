@@ -1,0 +1,291 @@
+<!doctype html>
+<html lang="id">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <title>Arka Pramudya, video editor & colorist</title>
+  <meta name="description" content="Edit iklan, video musik, film pernikahan, dan konten pendek, lengkap dengan color grading dan sound design.">
+  <meta name="theme-color" content="#1A1B1F">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Arka Pramudya, video editor & colorist">
+  <meta property="og:description" content="Edit iklan, video musik, film pernikahan, dan konten pendek, lengkap dengan color grading dan sound design.">
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='6' fill='%231A1B1F'/%3E%3Crect x='6' y='10' width='12' height='5' rx='1' fill='%236E8BFF'/%3E%3Crect x='12' y='17' width='14' height='5' rx='1' fill='%233CC6A8'/%3E%3Crect x='20' y='6' width='2' height='20' fill='%23FF5A4E'/%3E%3C/svg%3E">
+  <link rel="preload" href="assets/fonts/big-shoulders-display-latin-wght-normal.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="assets/fonts/hanken-grotesk-latin-wght-normal.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="stylesheet" href="assets/css/style.css">
+  <script>
+    (function () {
+      var d = document.documentElement;
+      d.classList.add("js");
+      var reduce = window.matchMedia && window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+      if (!reduce) d.classList.add("anim-ready");
+      var seen = false;
+      try { seen = sessionStorage.getItem("vep-leader") === "1"; } catch (e) {}
+      if (!reduce && !seen) d.classList.add("show-leader");
+      setTimeout(function () {
+        if (!d.classList.contains("anim-started")) d.classList.remove("anim-ready", "show-leader");
+      }, 6000);
+    })();
+  </script>
+</head>
+<body>
+  <a class="skip-link" href="#main" data-i18n="skip">Langsung ke konten</a>
+
+  <div class="leader" aria-hidden="true">
+    <div class="leader-ring">
+      <span class="leader-sweep"></span>
+      <span class="leader-cross"></span>
+      <span class="leader-num">3</span>
+    </div>
+  </div>
+
+  <header class="site-header">
+    <div class="header-inner">
+      <a class="wordmark" href="#top" data-bind="name">Arka Pramudya</a>
+
+      <nav class="main-nav" id="mainNav" aria-label="Menu">
+        <ul>
+          <li><a href="#work" data-i18n="nav.work">Karya</a></li>
+          <li><a href="#about" data-i18n="nav.about">Tentang</a></li>
+          <li><a href="#services" data-i18n="nav.services">Layanan</a></li>
+          <li><a href="#pricing" data-i18n="nav.pricing">Harga</a></li>
+          <li><a href="#contact" data-i18n="nav.contact">Kontak</a></li>
+        </ul>
+      </nav>
+
+      <div class="header-actions">
+        <div class="lang-switch" role="group" data-i18n-aria="lang.label" aria-label="Pilih bahasa">
+          <button type="button" data-lang="id" aria-pressed="true">ID</button>
+          <button type="button" data-lang="en" aria-pressed="false">EN</button>
+        </div>
+        <a class="btn btn-small btn-primary header-cta" href="#contact" data-i18n="nav.cta">Pesan edit</a>
+        <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="mainNav" data-i18n-aria="nav.menu" aria-label="Buka menu">
+          <span></span><span></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main id="main">
+    <section class="hero" id="top" data-tl="hero">
+      <div class="hero-copy">
+        <p class="hero-role" data-bind="role">Video editor & colorist di Bali</p>
+        <h1 class="hero-title" id="heroTitle">Dua jam rekaman. Enam puluh detik yang ditonton sampai habis.</h1>
+        <p class="hero-sub" data-bind="hero_sub"></p>
+        <div class="hero-actions">
+          <a class="btn btn-primary" href="#work" data-i18n="hero.cta_work">Lihat karya</a>
+          <button class="btn btn-ghost" type="button" data-action="showreel">
+            <svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M8 5.5v13l11-6.5z" fill="currentColor"/></svg>
+            <span data-i18n="hero.cta_reel">Putar showreel</span>
+          </button>
+        </div>
+      </div>
+
+      <figure class="viewer">
+        <div class="viewer-bar">
+          <span class="viewer-clip"><span data-i18n="hero.program">Program</span>: <span data-bind="program_clip">Uluwatu_Sunset_v3</span></span>
+          <span class="tc" id="heroTc">00:00:00:00</span>
+        </div>
+        <div class="viewer-screen" id="viewerScreen" style="--split: 50%">
+          <div class="scene scene-graded">
+            <svg class="scene-svg" viewBox="0 0 1600 900" preserveAspectRatio="xMidYMid slice" aria-hidden="true">
+              <defs>
+                <linearGradient id="sg-sky" x1="0" y1="0" x2="0" y2="1">
+                  <stop offset="0" stop-color="#1B2350"/>
+                  <stop offset=".38" stop-color="#6C3A78"/>
+                  <stop offset=".64" stop-color="#D8606A"/>
+                  <stop offset=".82" stop-color="#F6A35A"/>
+                  <stop offset="1" stop-color="#FFD88A"/>
+                </linearGradient>
+                <radialGradient id="sg-sun">
+                  <stop offset="0" stop-color="#FFFBE6"/>
+                  <stop offset=".55" stop-color="#FFE1A1"/>
+                  <stop offset="1" stop-color="#FFB25A"/>
+                </radialGradient>
+                <radialGradient id="sg-glow">
+                  <stop offset="0" stop-color="#FFD08A" stop-opacity=".8"/>
+                  <stop offset="1" stop-color="#FFD08A" stop-opacity="0"/>
+                </radialGradient>
+                <linearGradient id="sg-sea" x1="0" y1="0" x2="0" y2="1">
+                  <stop offset="0" stop-color="#F0A066"/>
+                  <stop offset=".22" stop-color="#B2566E"/>
+                  <stop offset=".6" stop-color="#4B2F63"/>
+                  <stop offset="1" stop-color="#191A36"/>
+                </linearGradient>
+              </defs>
+              <g class="art">
+                <rect width="1600" height="600" fill="url(#sg-sky)"/>
+                <circle cx="1040" cy="560" r="380" fill="url(#sg-glow)"/>
+                <g class="clouds" fill="#F8B07A">
+                  <ellipse class="cloud c1" cx="420" cy="250" rx="260" ry="10" opacity=".35"/>
+                  <ellipse class="cloud c2" cx="900" cy="330" rx="340" ry="8" opacity=".3"/>
+                  <ellipse class="cloud c3" cx="1320" cy="420" rx="220" ry="7" opacity=".4"/>
+                  <ellipse class="cloud c1" cx="1180" cy="190" rx="180" ry="6" opacity=".22"/>
+                </g>
+                <circle class="sun" cx="1040" cy="578" r="84" fill="url(#sg-sun)"/>
+                <path d="M1170 600 C1230 584 1300 570 1360 577 C1420 585 1470 592 1530 600 Z" fill="#6A3866" opacity=".85"/>
+                <rect y="600" width="1600" height="300" fill="url(#sg-sea)"/>
+                <g class="shimmer" fill="#FFD58F">
+                  <rect x="975" y="606" width="130" height="5" rx="2.5" opacity=".9"/>
+                  <rect x="990" y="622" width="100" height="4" rx="2" opacity=".75"/>
+                  <rect x="960" y="640" width="160" height="4" rx="2" opacity=".55"/>
+                  <rect x="1000" y="662" width="80" height="4" rx="2" opacity=".6"/>
+                  <rect x="945" y="688" width="190" height="3" rx="1.5" opacity=".35"/>
+                  <rect x="1010" y="716" width="60" height="3" rx="1.5" opacity=".4"/>
+                  <rect x="930" y="752" width="220" height="3" rx="1.5" opacity=".22"/>
+                  <rect x="1015" y="800" width="50" height="3" rx="1.5" opacity=".25"/>
+                </g>
+                <g class="swell" stroke="#FFDDB4" stroke-opacity=".22" stroke-width="2" fill="none">
+                  <path d="M480 700 C620 692 760 706 900 698"/>
+                  <path d="M1180 742 C1300 734 1420 748 1560 740"/>
+                  <path d="M620 812 C780 802 960 820 1120 808"/>
+                </g>
+                <path d="M0 330 L90 350 L150 342 L230 381 L300 402 L360 460 L430 502 L500 560 L560 640 L600 710 L640 900 L0 900 Z" fill="#2B1B35"/>
+                <g fill="#140D1F" transform="translate(0 -15)">
+                  <path d="M212 396 L258 396 L252 386 L218 386 Z"/>
+                  <path d="M204 386 L266 386 L251 371 L219 371 Z"/>
+                  <path d="M211 371 L259 371 L247 359 L223 359 Z"/>
+                  <path d="M218 359 L252 359 L243 348 L227 348 Z"/>
+                  <path d="M228 348 L242 348 L235 333 Z"/>
+                </g>
+                <path d="M0 470 L120 482 L200 522 L280 562 L330 622 L380 704 L420 802 L440 900 L0 900 Z" fill="#140D1F"/>
+                <path d="M1440 900 L1478 762 L1530 722 L1600 702 L1600 900 Z" fill="#160F22"/>
+                <g class="birds" stroke="#2A1A35" stroke-width="3" fill="none" stroke-linecap="round">
+                  <path d="M720 300 q7 -7 14 0 q7 -7 14 0"/>
+                  <path d="M770 270 q5 -5 10 0 q5 -5 10 0"/>
+                  <path d="M690 255 q4 -4 8 0 q4 -4 8 0"/>
+                </g>
+              </g>
+            </svg>
+          </div>
+          <div class="scene scene-log" aria-hidden="true"></div>
+          <span class="grade-handle" aria-hidden="true"><span></span></span>
+          <span class="grade-badge badge-log" data-i18n="hero.badge_log">Mentah (LOG)</span>
+          <span class="grade-badge badge-graded" data-i18n="hero.badge_graded">Setelah grading</span>
+          <label class="sr-only" for="gradeRange" data-i18n="hero.grade_label">Geser untuk membandingkan footage mentah dengan hasil grading</label>
+          <input class="grade-range" id="gradeRange" type="range" min="0" max="100" value="50" step="1">
+        </div>
+        <figcaption class="viewer-caption" data-i18n="hero.grade_hint">Geser layar untuk membandingkan footage mentah dengan hasil grading.</figcaption>
+      </figure>
+    </section>
+
+    <section class="tools" data-i18n-aria="tools.label" aria-label="Software yang saya pakai">
+      <div class="tools-track" id="toolsTrack"></div>
+    </section>
+
+    <section class="section work" id="work" data-tl="work">
+      <div class="section-head">
+        <h2 class="section-title" data-i18n="work.title">Karya terpilih</h2>
+        <div class="filters" id="workFilters" role="group" data-i18n-aria="work.filter_label" aria-label="Saring karya berdasarkan kategori"></div>
+      </div>
+      <div class="work-grid" id="workGrid"></div>
+      <p class="work-empty" id="workEmpty" hidden data-i18n="work.empty">Belum ada karya di kategori ini.</p>
+    </section>
+
+    <section class="section about" id="about" data-tl="about">
+      <h2 class="sr-only" data-i18n="about.title">Tentang</h2>
+      <p class="about-title" data-bind="about_title"></p>
+      <p class="about-body" id="aboutBody"></p>
+      <ul class="stats" id="stats"></ul>
+    </section>
+
+    <section class="section services" id="services" data-tl="services">
+      <h2 class="section-title" data-i18n="services.title">Yang bisa saya kerjakan</h2>
+      <ul class="service-list" id="serviceList"></ul>
+    </section>
+
+    <section class="process" id="process" data-tl="process">
+      <div class="process-sticky">
+        <h2 class="section-title" data-i18n="process.title">Dari footage ke file final</h2>
+        <div class="process-viewport">
+          <ol class="process-track" id="processTrack"></ol>
+        </div>
+      </div>
+    </section>
+
+    <section class="section pricing" id="pricing" data-tl="pricing">
+      <h2 class="section-title" data-i18n="pricing.title">Paket</h2>
+      <div class="price-grid" id="priceGrid"></div>
+    </section>
+
+    <section class="section testimonials" id="testimonials" data-tl="testimonials">
+      <div class="section-head">
+        <h2 class="section-title" data-i18n="testimonials.title">Kata klien</h2>
+        <p class="demo-note" data-i18n="testimonials.note">Contoh testimoni untuk website demo.</p>
+      </div>
+      <div class="quotes" id="quotes"></div>
+    </section>
+
+    <section class="section faq" id="faq" data-tl="faq">
+      <h2 class="section-title" data-i18n="faq.title">Pertanyaan yang sering ditanya</h2>
+      <div class="faq-list" id="faqList"></div>
+    </section>
+
+    <section class="contact" id="contact" data-tl="contact">
+      <h2 class="contact-title" data-bind="contact_title"></h2>
+      <p class="contact-sub" data-bind="contact_sub"></p>
+      <div class="contact-actions">
+        <a class="btn btn-primary btn-large" id="waLink" href="#" target="_blank" rel="noopener">
+          <svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2Zm0 18.2a8.2 8.2 0 0 1-4.2-1.1l-.3-.2-3 .8.8-2.9-.2-.3A8.2 8.2 0 1 1 12 20.2Zm4.5-6.1c-.2-.1-1.5-.7-1.7-.8-.2-.1-.4-.1-.6.1l-.8 1c-.1.2-.3.2-.5.1a6.7 6.7 0 0 1-3.3-2.9c-.3-.4.3-.4.7-1.4.1-.2 0-.3 0-.4l-.8-1.8c-.2-.5-.4-.4-.6-.4h-.5a1 1 0 0 0-.7.3 3 3 0 0 0-.9 2.2 5.2 5.2 0 0 0 1.1 2.7 11.8 11.8 0 0 0 4.5 4c1.7.7 2.3.8 3.2.6a2.7 2.7 0 0 0 1.8-1.2 2.2 2.2 0 0 0 .1-1.2c0-.1-.2-.2-.5-.3Z"/></svg>
+          <span data-i18n="contact.wa">Chat WhatsApp</span>
+        </a>
+        <a class="btn btn-ghost btn-large" id="emailLink" href="#">
+          <span data-i18n="contact.email">Kirim email</span>
+        </a>
+      </div>
+      <p class="contact-meta"><span data-bind="location"></span><span class="contact-social" id="socialLinks"></span></p>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <p><span id="footerYear"></span> <span data-bind="name"></span></p>
+    <p class="footer-demo" data-i18n="footer.demo">Ini website demo. Nama, karya, dan testimoni di halaman ini fiktif.</p>
+    <p class="footer-credit" id="footerCredit"></p>
+    <p class="footer-fonts" data-i18n="footer.fonts"></p>
+  </footer>
+
+  <nav class="timeline" id="timeline" data-i18n-aria="timeline.label" aria-label="Timeline halaman">
+    <span class="tl-tc" id="tlTc" aria-hidden="true">00:00:00:00</span>
+    <div class="tl-body">
+      <div class="tl-ruler" aria-hidden="true"></div>
+      <div class="tl-track" id="tlTrack"></div>
+      <span class="tl-playhead" id="tlPlayhead" aria-hidden="true"></span>
+    </div>
+  </nav>
+
+  <a class="demo-badge" id="demoBadge" href="#" target="_blank" rel="noopener" hidden>
+    <span class="demo-badge-text" data-i18n="badge.text">Mau website seperti ini?</span>
+    <span class="demo-badge-cta" id="demoBadgeCta"></span>
+  </a>
+
+  <div class="cursor" id="cursor" aria-hidden="true">
+    <svg viewBox="0 0 24 24"><path d="M8 5.5v13l11-6.5z" fill="currentColor"/></svg>
+    <span data-i18n="work.play">Putar</span>
+  </div>
+
+  <dialog class="modal" id="clipModal" aria-labelledby="modalTitle">
+    <div class="modal-panel">
+      <div class="modal-head">
+        <p class="modal-cat" id="modalCat"></p>
+        <h2 class="modal-title" id="modalTitle"></h2>
+        <button class="modal-close" type="button" data-action="close-modal" data-i18n-aria="modal.close" aria-label="Tutup">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6 6l12 12M18 6L6 18" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+        </button>
+      </div>
+      <div class="modal-media" id="modalMedia"></div>
+      <div class="modal-body">
+        <p class="modal-summary" id="modalSummary"></p>
+        <dl class="modal-facts" id="modalFacts"></dl>
+        <p class="modal-credit" id="modalCredit"></p>
+      </div>
+    </div>
+  </dialog>
+
+  <script src="assets/vendor/motion.js"></script>
+  <script src="assets/js/config.js"></script>
+  <script src="assets/js/i18n.js"></script>
+  <script src="data/demo-content.js"></script>
+  <script src="assets/js/data.js"></script>
+  <script src="assets/js/app.js"></script>
+</body>
+</html>
